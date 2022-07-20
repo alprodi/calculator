@@ -26,13 +26,34 @@ body{
     font-weight: bold;
 }
 
-
 #calc_wrapper{
-    background: grey;
+    background: darkgray;
     min-width: 40vh;
     min-height: 60vh;
     border-style: solid;
     margin: 50px;
+    display:flex;
+    flex-direction: column;
 }
 
+#calc_logo{
+    background-color: darkgrey;
+    align-items: center;
+    justify-content: center;
+    min-height: 5vh;
+    text-align: center;
+}
 
+#calc_display{
+    background-color: white;
+    min-height: 5vh;
+    text-align: center;
+    margin-left: 3vh;
+    margin-right: 3vh;
+    padding: 1vh;
+}
+#calc_buttons{
+    border-style: solid;
+    margin: 3vh;;
+    min-height: 40vh;
+}
