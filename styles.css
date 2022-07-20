@@ -1,0 +1,11 @@
+/* styles.css */
+
+html {
+    background-color:bisque;
+    scroll-behavior: smooth;
+}
+
+/* Default Font Family */
+* {
+    font-family: 'Lato', sans-serif;
+}
