@@ -9,3 +9,28 @@ html {
 * {
     font-family: 'Lato', sans-serif;
 }
+
+#calc_wrapper{
+    background: grey;
+    min-width: 40vh;
+    min-height: 60vh;
+    border-style: solid;
+    margin: 50px;
+}
+
+body{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 97vh;
+}
+
+.header{
+    font-weight: bold;
+    font-size: 40px;
+}
+.footer{
+    margin-top: auto;
+    font-weight: bold;
+}
+
