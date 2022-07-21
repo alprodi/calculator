@@ -28,14 +28,15 @@ body{
 
 #calc_wrapper{
     background: darkgray;
-    min-width: 40vh;
-    min-height: 60vh;
+    width: 50vh;
+    height: 70vh;
     border-style: solid;
     margin: 50px;
     display:flex;
     flex-direction: column;
     border-radius: 8%;
-    padding: 5px
+    padding: 5px;
+    align-items: center;
 }
 
 #calc_logo{
@@ -51,13 +52,21 @@ body{
     background-color: white;
     min-height: 5vh;
     text-align: center;
+    width: 40vh;
     border-radius: 5px;
     margin-left: 3vh;
     margin-right: 3vh;
 }
-#calc_buttons{
+#calc_buttons_wrapper{
     border-style: solid;
     margin: 3vh;
-    min-height: 40vh;
-    border-radius: 5%
+    height: 60vh;
+    width: 40vh;
+
+    display: flex;
+    flex-flow: row wrap;
+}
+#calc_buttons_wrapper button{
+    width: 10vh;
+
 }
