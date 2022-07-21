@@ -17,16 +17,16 @@ const divide = function(x, y){
 }
 
 const operate = function(operator, x, y){
-  if(operator = "add"){
+  if(operator == "add"){
     return add(x, y);
   }
-  else if (operator = "subtract"){
+  else if (operator == "subtract"){
     return subtract(x, y);
   }
-  else if (operator = "multiply"){
+  else if (operator == "multiply"){
     return multiply(x, y);
   }
-  else if (operator = "divide"){
+  else if (operator == "divide"){
     return divide(x, y);
   }
   else {return "Something went wrong."}
