@@ -25,7 +25,6 @@ body{
     margin-top: auto;
     font-weight: bold;
 }
-
 #calc_wrapper{
     background: darkgray;
     width: 50vh;
@@ -38,7 +37,6 @@ body{
     padding: 5px;
     align-items: center;
 }
-
 #calc_logo{
     align-items: center;
     justify-content: center;
@@ -47,7 +45,6 @@ body{
     margin-left: 3vh;
     margin-right: 3hh;
 }
-
 #calc_display{
     background-color: white;
     min-height: 5vh;
@@ -62,11 +59,9 @@ body{
     margin: 3vh;
     height: 60vh;
     width: 40vh;
-
     display: flex;
     flex-flow: row wrap;
 }
 #calc_buttons_wrapper button{
     width: 10vh;
-
 }
