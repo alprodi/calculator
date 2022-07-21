@@ -28,7 +28,7 @@ body{
 #calc_wrapper{
     background: darkgray;
     width: 50vh;
-    height: 70vh;
+    height: 80vh;
     border-style: solid;
     margin: 50px;
     display:flex;
@@ -43,16 +43,20 @@ body{
     min-height: 5vh;
     text-align: center;
     margin-left: 3vh;
-    margin-right: 3hh;
+    margin-right: 3vh;
+    margin-bottom: 2vh;
+    font-size: 35px;
+    font-weight:normal
 }
 #calc_display{
     background-color: white;
-    min-height: 5vh;
     text-align: center;
     width: 40vh;
+    height: 10vh;
     border-radius: 5px;
     margin-left: 3vh;
     margin-right: 3vh;
+    font-size: 25px;
 }
 #calc_buttons_wrapper{
     border-style: solid;
@@ -64,4 +68,8 @@ body{
 }
 #calc_buttons_wrapper button{
     width: 10vh;
+}
+.button_operator,
+.button_num{
+    font-size: 20px;
 }
