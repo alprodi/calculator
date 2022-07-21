@@ -1,3 +1,8 @@
+let displayValue = "";
+let display = document.querySelector("#calc_display");
+display.innerHTML = displayValue;
+
+
 const add = function(x, y) {
 	return x + y;
 };
@@ -30,7 +35,6 @@ const operate = function(operator, x, y){
     return divide(x, y);
   }
   else {return "Something went wrong."}
-
 }
 
 
