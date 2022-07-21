@@ -1,4 +1,3 @@
-let displayValue = "";
 const display = document.querySelector("#calc_display");
 const calc_0 = document.querySelector("#calc_0");
 const calc_1 = document.querySelector("#calc_1");
@@ -15,7 +14,13 @@ const subt_button = document.querySelector("#cald_subt");
 const mult_button = document.querySelector("#calc_mult");
 const div_button = document.querySelector("#calc_divide");
 
+//object.addEventListener("click", myScript);
+
+let displayValue = "";
 display.innerHTML = displayValue;
+let val1 ="";
+let val2 = "";
+let operator = "";
 
 const add = function(x, y) {
 	return x + y;
