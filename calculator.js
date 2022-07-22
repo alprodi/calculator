@@ -16,14 +16,21 @@ calc_button.forEach((button) => {
 //and send its ID to buttonClick
     buttonClick(
         button.id.replace('calc_', ''), 
-        button.className.replace('calc_button', '')
+        button.className.replace('calc_button ', '')
     );
   });
 });
 //check to see if the button is a num or an operator
 const buttonClick = function(buttonId, buttonClass){
   console.log(buttonId + buttonClass);
-  if(buttonClass == "calc"){
+  if(buttonClass == "calc_num"){
+    console.log("It's a num")
+  }
+  else if (buttonClass == "calc_operator"){
+    console.log("It's an operator!");
+  }
+  else{
+    alert("Something went wrong. Oh no what have you done?");
   }
 }
 /*number button functions contains some messy logic to see if
