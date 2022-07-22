@@ -27,7 +27,7 @@ const buttonClick = function(buttonId, buttonClass){
     numClick(buttonId);
   }
   else if (buttonClass == "calc_operator"){
-    console.log("It's an operator!");
+    operatorClick(buttonId);
   }
   else{
     alert("Something went wrong. Oh no what have you done?");
@@ -60,14 +60,42 @@ const numClick = function(num){
   else if(operator != "" && val2 != ""){
     val2 += num;
   }
+  else {alert("Something went wrong with the numClick function.");}
 //whatever happens, update the display!
   updateDisplay();
   console.log("Val1 = " + val1 + ", Val2 = " + val2);
 }
 
+//operator button click logic
+const operatorClick = function(opButton){
+  console.log(opButton);
+  if(opButton == "add"){
+    operator = "&#x2795";
+  }
+  else if (opButton == "subt"){
+    operator = "&#x2796";
+  }
+  else if (opButton == "mult"){
+    operator = "&#x2716";
+  }
+  else if (opButton == "divide"){
+    operator = "&#x2797";
+  }
+  else if (opButton == "clear"){
+    clearAll();
+  }
+  else if (opButton == "dot"){
+
+  }
+  else if (opButton == "equals"){
+
+  }
+  else {alert("That operator button doesn't exist?!! What have you done?")}
+}
+
 //update display
 const updateDisplay = function(){
-  displayValue = (val1 + operator + val2);
+  displayValue = (val1 + " " + operator + " " + val2);
   display.innerHTML = displayValue;
   console.log("displayValue = " + displayValue);
   console.log("Operator - " + operator);
@@ -103,3 +131,9 @@ const operate = function(operator, x, y){
   else {return "Something went wrong."}
 }
 
+const clearAll = function(){
+  val1 = "";
+  val2 = "";
+  operator = "";
+  updateDisplay();
+}
