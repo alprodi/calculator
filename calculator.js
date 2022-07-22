@@ -1,28 +1,19 @@
 const display = document.querySelector("#calc_display");
 
-const button_num = document.querySelectorAll('.button_num');
-const button_operator = document.querySelectorAll('.button_operator');
-//const button_operator = document.getElementsByClassName('roundButtons');
+//create a node list of all calculator buttons
+const calc_button = document.querySelectorAll('.calc_button');
 
+//setting some default values
 let val1 = "";
 let val2 = "";
 let operator = "";
 let displayValue = "";
 display.innerHTML = displayValue;
 
-// we use the .forEach method to iterate through each button
-button_num.forEach((button) => {
-  // and for each one we add a 'click' listener
+//iterate through calc buttons and add click listeners
+calc_button.forEach((button) => {
   button.addEventListener('click', () => {
-    //alert(button.id);
-    buttonClick(button.id.replace('calc_', ''));
-  });
-});
-
-button_operator.forEach((button) => {
-  // and for each one we add a 'click' listener
-  button.addEventListener('click', () => {
-    //alert(button.id);
+//and send its ID to buttonClick
     buttonClick(button.id.replace('calc_', ''));
   });
 });

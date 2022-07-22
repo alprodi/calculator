@@ -76,7 +76,6 @@ body{
     width: 10vh;
     min-width: 30px;
 }
-.button_operator,
-.button_num{
+.calc_button{
     font-size: 25px;
 }
