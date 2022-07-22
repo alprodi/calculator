@@ -22,7 +22,7 @@ calc_button.forEach((button) => {
 });
 //check to see if the button is a num or an operator
 const buttonClick = function(buttonId, buttonClass){
-  console.log(buttonId + buttonClass);
+  //console.log(buttonId + buttonClass);
   if(buttonClass == "calc_num"){
     numClick(buttonId);
   }
@@ -68,7 +68,6 @@ const numClick = function(num){
 
 //operator button click logic
 const operatorClick = function(opButton){
-  console.log(opButton);
   if(opButton == "add"){
     operator = "&#x2795";
   }
@@ -85,7 +84,7 @@ const operatorClick = function(opButton){
     clearAll();
   }
   else if (opButton == "dot"){
-
+    calcDot();
   }
   else if (opButton == "equals"){
 
@@ -98,7 +97,7 @@ const updateDisplay = function(){
   displayValue = (val1 + " " + operator + " " + val2);
   display.innerHTML = displayValue;
   console.log("displayValue = " + displayValue);
-  console.log("Operator - " + operator);
+  console.log(" Operator = " + operator);
 }
 
 //defining operator functions
@@ -129,6 +128,32 @@ const operate = function(operator, x, y){
     return divide(x, y);
   }
   else {return "Something went wrong."}
+}
+
+/*
+Still need to check to see if there is already a decimal in either val
+*/
+const calcDot = function(){
+  //If everything is blank, then make val1 0.
+  if (val1 == "" && val2 == "" && operator == "") {
+    val1 = 0.;
+    operator = "";
+    val2 = "";
+  }
+//If there's only something in val1, append the decimal to val1
+  else if (val1 != "" && val2 == "" && operator == "") {
+    val1 += '.';
+  }
+//If there's already an operator and val2 is empty, 
+//then make val2 0.
+  else if(operator != "" && val2 == ""){
+    val2 = 0.;
+  }
+//If there's already an operator and there's something
+//in val2, then append decimal to val2.
+  else if(operator != "" && val2 != ""){
+    val2 += '.';
+  }
 }
 
 const clearAll = function(){
