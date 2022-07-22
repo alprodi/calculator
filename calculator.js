@@ -14,15 +14,14 @@ display.innerHTML = displayValue;
 calc_button.forEach((button) => {
   button.addEventListener('click', () => {
 //and send its ID to buttonClick
-    buttonClick(button.id.replace('calc_', ''));
+    buttonClick(button.id.replace('calc_', ''), button.className);
   });
 });
 
 //check to see if the button is a num or an operator
-const buttonClick = function(x){
-  console.log(x);
+const buttonClick = function(buttonId, buttonClass){
+console.log(buttonId + buttonClass);
 }
-
 /*number button functions contains some messy logic to see if
 an operator has already been presed or not, also checking to see
 if a number has already been pressed or not. Based on that, the
