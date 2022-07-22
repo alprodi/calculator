@@ -70,15 +70,19 @@ const numClick = function(num){
 const operatorClick = function(opButton){
   if(opButton == "add"){
     operator = "&#x2795";
+    updateDisplay();
   }
   else if (opButton == "subt"){
     operator = "&#x2796";
+    updateDisplay();
   }
   else if (opButton == "mult"){
     operator = "&#x2716";
+    updateDisplay();
   }
   else if (opButton == "divide"){
     operator = "&#x2797";
+    updateDisplay();
   }
   else if (opButton == "clear"){
     clearAll();
@@ -87,7 +91,7 @@ const operatorClick = function(opButton){
     calcDot();
   }
   else if (opButton == "equals"){
-
+    calcEquals();
   }
   else {alert("That operator button doesn't exist?!! What have you done?")}
 }
@@ -96,38 +100,23 @@ const operatorClick = function(opButton){
 const updateDisplay = function(){
   displayValue = (val1 + " " + operator + " " + val2);
   display.innerHTML = displayValue;
-  console.log("displayValue = " + displayValue);
-  console.log(" Operator = " + operator);
+  //console.log("displayValue = " + displayValue);
+  //console.log(" Operator = " + operator);
 }
 
 //defining operator functions
 const add = function(x, y) {
-	return x + y;
+	val1 = +x + +y;
 };
 const subtract = function(x, y) {
-	return (x - y);
+	val1 = (x - y);
 };
 const multiply = function(x, y) {
-  return(x * y);
+  val1 = (x * y);
 };
 const divide = function(x, y){
   if(y == 0){return "Div by Zero"}
-  else{return(x / y);}
-}
-const operate = function(operator, x, y){
-  if(operator == "add"){
-    return add(x, y);
-  }
-  else if (operator == "subtract"){
-    return subtract(x, y);
-  }
-  else if (operator == "multiply"){
-    return multiply(x, y);
-  }
-  else if (operator == "divide"){
-    return divide(x, y);
-  }
-  else {return "Something went wrong."}
+  else{val1 = (x / y);}
 }
 
 /*
@@ -156,9 +145,30 @@ const calcDot = function(){
   }
 }
 
+const calcEquals = function(){
+  switch(operator){
+    case "&#x2795":
+    add (val1, val2);
+    break;
+    case  "&#x2796":
+    subtract(val1, val2);
+    break;
+    case "&#x2716":
+    multiply (val1, val2);
+    break;
+    case "&#x2797":
+    divide (val1, val2);
+    break;
+  }
+  val2 = "";
+  operator = "";
+  updateDisplay();
+}
+
 const clearAll = function(){
   val1 = "";
   val2 = "";
   operator = "";
   updateDisplay();
 }
+
