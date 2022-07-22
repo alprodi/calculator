@@ -1,5 +1,5 @@
+//call the calculator display ID from HTML for updating later
 const display = document.querySelector("#calc_display");
-
 //create a node list of all calculator buttons
 const calc_button = document.querySelectorAll('.calc_button');
 
@@ -18,10 +18,17 @@ calc_button.forEach((button) => {
   });
 });
 
+//check to see if the button is a num or an operator
 const buttonClick = function(x){
   console.log(x);
 }
 
+/*number button functions contains some messy logic to see if
+an operator has already been presed or not, also checking to see
+if a number has already been pressed or not. Based on that, the
+number will either be appended to an existing temporary variable
+or will start this variable.
+*/
 const numClick = function(num){
   if (val1 == "" && val2 == "" && operator == "") {
     val1 = num;
@@ -35,15 +42,16 @@ const numClick = function(num){
   else if(operator != "" && val2 != ""){
     val2 += num;
   }
+//whatever happens, update the display!
   updateDisplay();
 }
 
+//update display
 const updateDisplay = function(operator, x, y){
   displayValue = (val1 + operator + val2);
 }
 
-
-
+//defining operator functions
 const add = function(x, y) {
 	return x + y;
 };
@@ -57,7 +65,6 @@ const divide = function(x, y){
   if(y == 0){return "Div by Zero"}
   else{return(x / y);}
 }
-
 const operate = function(operator, x, y){
   if(operator == "add"){
     return add(x, y);
