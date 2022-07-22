@@ -24,7 +24,7 @@ calc_button.forEach((button) => {
 const buttonClick = function(buttonId, buttonClass){
   console.log(buttonId + buttonClass);
   if(buttonClass == "calc_num"){
-    console.log("It's a num")
+    numClick(buttonId);
   }
   else if (buttonClass == "calc_operator"){
     console.log("It's an operator!");
@@ -40,25 +40,37 @@ number will either be appended to an existing temporary variable
 or will start this variable.
 */
 const numClick = function(num){
+//If everything is blank, then make val1 the num
   if (val1 == "" && val2 == "" && operator == "") {
     val1 = num;
+    operator = "";
+    val2 = "";
   }
+//If there's only something in val1, append the num to val1
   else if (val1 != "" && val2 == "" && operator == "") {
     val1 += num;
   }
+//If there's already an operator and val2 is empty, 
+//then make val2 the num
   else if(operator != "" && val2 == ""){
     val2 = num;
   }
+//If there's already an operator and there's something
+//in val2, then append num to val2.
   else if(operator != "" && val2 != ""){
     val2 += num;
   }
 //whatever happens, update the display!
   updateDisplay();
+  console.log("Val1 = " + val1 + ", Val2 = " + val2);
 }
 
 //update display
-const updateDisplay = function(operator, x, y){
+const updateDisplay = function(){
   displayValue = (val1 + operator + val2);
+  display.innerHTML = displayValue;
+  console.log("displayValue = " + displayValue);
+  console.log("Operator - " + operator);
 }
 
 //defining operator functions
