@@ -155,8 +155,16 @@ const divide = function(x, y){
 Still need to check to see if there is already a decimal in either val
 */
 const calcDot = function(){
+  //If there's already a decimal in val2, make an error message
+  if (val2 != "" && val2.indexOf('.') > -1){
+    alert("There is already a decimal in there. Hmm.");
+  }
+  //If we only have val1 and there's already a decimal in it, error
+  if (val2 == "" && val1.indexOf('.') > -1){
+    alert("There is already a decimal in there. Hmm.");
+  }
   //If everything is blank, then make val1 0.
-  if (val1 == "" && val2 == "" && operator == "") {
+  else if (val1 == "" && val2 == "" && operator == "") {
     val1 = 0.;
     operator = "";
     val2 = "";
