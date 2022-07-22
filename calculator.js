@@ -64,9 +64,8 @@ const numClick = function(num){
   else {alert("Something went wrong with the numClick function.");}
 //whatever happens, update the display!
   updateDisplay();
-  console.log("Val1 = " + val1 + ", Val2 = " + val2);
+  //console.log("Val1 = " + val1 + ", Val2 = " + val2);
 }
-
 //operator button click logic
 const operatorClick = function(opButton){
 //to chain together operators, make sure there isn't
