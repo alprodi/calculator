@@ -96,17 +96,36 @@ const operatorClick = function(opButton){
   else if (opButton == "equals"){
     calcEquals();
   }
-  //if none of the previous is true, just recalculate the operator
+  //if none of the previous is true and there isn't
+  //already a second variable, recalculate the operator
   else if(val2 != ""){
-    tempOperator = operator;
-    calcEquals();
-    operator = tempOperator;
-    tempOperator = "";
-    updateDisplay();
+    if(opButton == "add"){
+      reCalculate();
+      operator = "&#x2795";
+    }
+    else if (opButton == "subt"){
+      reCalculate();
+      operator = "&#x2796";
+    }
+    else if (opButton == "mult"){
+      reCalculate();
+      operator = "&#x2716";
+    }
+    else if (opButton == "divide"){
+      reCalculate();
+      operator = "&#x2797";
+    }
   }
   else {alert("That operator button doesn't exist?!! What have you done?")}
 }
 
+const reCalculate = function(){
+  tempOperator = operator;
+  calcEquals();
+  operator = tempOperator;
+  tempOperator = "";
+  updateDisplay();
+}
 //update display
 const updateDisplay = function(){
   displayValue = (val1 + " " + operator + " " + val2);
