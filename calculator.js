@@ -7,6 +7,7 @@ const calc_button = document.querySelectorAll('.calc_button');
 let val1 = "";
 let val2 = "";
 let operator = "";
+let tempOperator = "";
 let displayValue = "";
 display.innerHTML = displayValue;
 
@@ -68,19 +69,21 @@ const numClick = function(num){
 
 //operator button click logic
 const operatorClick = function(opButton){
-  if(opButton == "add"){
+//to chain together operators, make sure there isn't
+//already a val2
+  if(opButton == "add" && val2 == ""){
     operator = "&#x2795";
     updateDisplay();
   }
-  else if (opButton == "subt"){
+  else if (opButton == "subt" && val2 == ""){
     operator = "&#x2796";
     updateDisplay();
   }
-  else if (opButton == "mult"){
+  else if (opButton == "mult" && val2 == ""){
     operator = "&#x2716";
     updateDisplay();
   }
-  else if (opButton == "divide"){
+  else if (opButton == "divide" && val2 == ""){
     operator = "&#x2797";
     updateDisplay();
   }
@@ -92,6 +95,14 @@ const operatorClick = function(opButton){
   }
   else if (opButton == "equals"){
     calcEquals();
+  }
+  //if none of the previous is true, just recalculate the operator
+  else if(val2 != ""){
+    tempOperator = operator;
+    calcEquals();
+    operator = tempOperator;
+    tempOperator = "";
+    updateDisplay();
   }
   else {alert("That operator button doesn't exist?!! What have you done?")}
 }
@@ -169,6 +180,7 @@ const clearAll = function(){
   val1 = "";
   val2 = "";
   operator = "";
+  tempOperator = "";
   updateDisplay();
 }
 
