@@ -144,7 +144,10 @@ const multiply = function(x, y) {
   val1 = (x * y);
 };
 const divide = function(x, y){
-  if(y == 0){return "Div by Zero"}
+  if(y == 0){
+    alert ("Don't divide by zero. That's dangerous.");
+    clearAll();
+  }
   else{val1 = (x / y);}
 }
 
